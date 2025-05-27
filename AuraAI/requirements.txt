@@ -1,0 +1,18 @@
+# Basic Rasa requirements
+rasa
+rasa-sdk
+
+# Database
+mysql-connector-python
+
+# Visualization 
+matplotlib
+numpy
+
+# PDF generation
+fpdf
+
+# Additional useful packages
+pandas
+scikit-learn
+seaborn

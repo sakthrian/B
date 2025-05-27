@@ -1,0 +1,15 @@
+{
+  "intent": "student_co_report",
+  "examples": [
+    "show me the co attainment of student [2401507106](register_no)",
+    "generate co attainment report for [2401507106](register_no)",
+    "what is the co attainment of [2401507106](register_no)",
+    "give me the co attainment report of student [2401507106](register_no)",
+    "i want to see co report for student [2401507106](register_no)",
+    "show co attainment of [2401507106](register_no)",
+    "display course outcome report for [2401507106](register_no)",
+    "generate student performance report for register number [2401507106](register_no)",
+    "what are the course outcomes achieved by [2401507106](register_no)",
+    "create co attainment pdf for student [2401507106](register_no)"
+  ]
+} 

@@ -1,0 +1,13 @@
+cd AuraAI
+.\venv\Scripts\Activate 
+rasa run actions 
+
+cd AuraAI
+.\venv\Scripts\Activate 
+rasa run --enable-api --port 5005 --cors "*"
+
+compare the co attainment of batch 2023-2025 and 2024-2026 
+
+show me the co attainment of Big Data Mining and Analytics 
+
+show me the co attainment of student 2401507106

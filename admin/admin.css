@@ -1,0 +1,396 @@
+:root {
+    --text-primary: #1a1a2e;
+    --accent-color: #4f46e5;
+    --sidebar-width: 250px;
+    --background-light: #ffffff;
+    --sidebar-background: #f0f0f0;
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: inherit;
+    position: relative;
+    z-index: 1;
+    padding-top: 70px;
+}
+
+.dashboard-sidebar {
+    width: 250px;
+    padding: 1.5rem;
+    border-right: 1px solid var(--border-color);
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    position: sticky;
+    top: 0; /* Changed from 70px to 0 */
+    background: var(--sidebar-background);
+}
+
+.dashboard-sidebar .sidebar-menu a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.dashboard-sidebar .sidebar-menu a:hover,
+.dashboard-sidebar .sidebar-menu a.active {
+    background: rgba(0, 0, 0, 0.05);
+    transform: scale(1.03);
+}
+
+.dashboard-sidebar .sidebar-menu a i {
+    margin-right: 0.5rem;
+}
+
+.dashboard-sidebar .sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(37, 99, 235, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.admin-icon i {
+    color: rgba(37, 99, 235, 0.8);
+    font-size: 2rem;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-name {
+    font-weight: 600;
+    color: rgba(37, 99, 235, 0.9);
+}
+
+.admin-role {
+    font-size: 0.8rem;
+    color: rgba(26, 26, 26, 0.7);
+}
+
+.dashboard-content {
+    flex-grow: 1;
+    padding: 2.5rem;
+    background: white;
+    min-height: calc(100vh - 70px); 
+    overflow-y: auto;
+    box-shadow: -1px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+#student-upload,
+#faculty-mapping,
+#current-mappings,
+#staff-details,
+#student-details {
+    display: none;
+}
+
+#student-upload.active,
+#faculty-mapping.active,
+#current-mappings.active,
+#staff-details.active,
+#student-details.active {
+    display: block;
+}
+
+/* Upload Student Details Styling */
+.upload-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.upload-box {
+    flex: 1;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: rgba(37, 99, 235, 0.5);
+    background: rgba(37, 99, 235, 0.1);
+    transform: scale(1.02);
+}
+
+.upload-box i {
+    font-size: 4rem;
+    color: rgba(37, 99, 235, 0.8);
+    margin-bottom: 1rem;
+}
+
+.upload-instructions {
+    flex: 1;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+/* Generic Table Styling */
+#mapping-table,
+#student-list-container table,
+#upload-preview-table,
+.table-striped,
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#mapping-table thead,
+#student-list-container thead,
+#upload-preview-table thead,
+.table-striped thead,
+.table thead {
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+#mapping-table th,
+#mapping-table td,
+#student-list-container th,
+#student-list-container td,
+#upload-preview-table th,
+#upload-preview-table td,
+.table-striped th,
+.table-striped td,
+.table th,
+.table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+#mapping-table tbody tr:hover,
+#student-list-container tbody tr:hover,
+#upload-preview-table tbody tr:hover,
+.table-striped tbody tr:hover,
+.table tbody tr:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+}
+
+/* Button Styles */
+.upload-btn,
+.confirm-upload,
+.cancel-upload,
+.btn-primary,
+.btn-delete {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.upload-btn,
+.confirm-upload,
+.btn-primary,
+.btn-delete {
+    background-color: rgba(37, 99, 235, 0.9);
+    color: white;
+}
+
+.cancel-upload {
+    background-color: rgba(220, 38, 38, 0.9);
+    color: white;
+}
+
+.upload-btn:hover,
+.confirm-upload:hover,
+.cancel-upload:hover,
+.btn-primary:hover,
+.btn-delete:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Section Styles */
+#student-details,
+#staff-details,
+#current-mappings {
+    background-color: rgba(249, 250, 251, 1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#student-details h3,
+#staff-details h1,
+#current-mappings h3 {
+    margin-bottom: 1rem;
+    color: rgba(17, 24, 39, 0.8);
+    text-align: left;
+}
+
+/* Form Styles */
+.student-filters {
+    margin-bottom: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-row,
+.search-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.filter-group,
+.search-group {
+    flex: 1;
+}
+
+.filter-group label,
+.search-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.filter-group select,
+.search-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* Faculty Mapping Form */
+#faculty-mapping .form-group {
+    margin-bottom: 1rem;
+}
+
+#faculty-mapping .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#faculty-mapping .form-group select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+#faculty-mapping .form-group select:focus {
+    outline: none;
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+@media (max-width: 768px) {
+    .filter-row,
+    .search-row {
+        flex-direction: column;
+    }
+}
+
+
+#logout-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#logout-modal .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#logout-modal .modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+#confirm-logout {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#cancel-logout {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ced4da;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.section {
+    display: none; /* Hide by default */
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.section.active {
+    display: block; /* Show when active */
+    opacity: 1;
+    transform: scale(1);
+}

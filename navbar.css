@@ -1,0 +1,98 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0.75rem 5%;
+    background: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: none;
+    width: 100%;
+}
+
+.ptu-logo {
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    object-fit: contain;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    overflow: hidden;
+    white-space: normal;
+    flex-grow: 1;
+}
+
+.college-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.tool-name {
+    font-size: 0.7rem;
+    color: #666;
+    opacity: 0.7;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.navbar .nav-links a.active {
+    color: #1a1a1a;
+    font-weight: bold;
+}

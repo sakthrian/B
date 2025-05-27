@@ -1,0 +1,110 @@
+:root { 
+    --accent-color-light: #2563eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #ffffff 0%, #ffffff 100%);
+    background-attachment: fixed;
+    color: #1a1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 70px; 
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(200, 215, 240, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(190, 210, 235, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(180, 200, 230, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(195, 205, 225, 0.4) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 5% 1rem;
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color-light);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.solutions {
+    padding: 4rem 5%;
+    background: transparent;
+}
+
+.solution-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+    will-change: transform, box-shadow;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+    border-color: rgba(150, 150, 150, 0.4);
+}
+
+.card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color-light);
+    transition: transform 0.3s ease;
+}
+
+.card:hover i {
+    transform: scale(1.2);
+}

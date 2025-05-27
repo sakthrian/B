@@ -1,0 +1,171 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - faculty_subject
+  - faculty_for_subject
+  - student_info
+  - student_by_name
+  - students_by_year
+  - students_by_semester
+  - students_by_section
+  - students_by_batch
+  - students_by_type
+  - course_by_code
+  - course_by_name
+  - courses_by_semester
+  - courses_by_credits
+  - courses_by_type
+  - course_count
+  - course_prerequisites
+  - course_co_attainment
+  - compare_co_attainment
+  - student_co_report
+
+entities:
+  - faculty_name
+  - subject_name
+  - student_name
+  - register_number
+  - register_no
+  - year
+  - semester
+  - section
+  - batch
+  - batch1
+  - batch2
+  - batch3
+  - course_code
+  - course_name
+  - credits
+  - course_type
+  - type
+
+slots:
+  student_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: student_name
+  register_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: register_number
+  faculty_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: faculty_name
+  subject_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: subject_name
+  year:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: year
+  semester:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: semester
+  section:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: section
+  batch:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: batch
+  course_code:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: course_code
+  course_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: course_name
+  credits:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: credits
+  course_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: course_type
+  student_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: type
+
+actions:
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - action_query_router
+  - action_student_query
+  - action_faculty_query
+  - action_course_query
+  - action_fallback
+  - action_greeting
+  - action_goodbye
+  - action_help
+  - action_compare_co_attainment
+  - action_student_co_report
+
+responses:
+  utter_greet:
+  - text: "Hi, I'm AuraAI™. How can I assist you today?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1WwC.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "Hi, I'm AuraAI™, your intelligent assistant for Outcome-Based Education (OBE). How can I assist you today?"
+
+  utter_howru:
+  - text: "I'm doing well, thank you for asking! How can I help you today?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,6 @@
+[20-Apr-2025 18:07:38 Europe/Berlin] get_course_code.php accessed with data: Array
+(
+    [name] => Computer Networks
+)
+
+[20-Apr-2025 18:07:38 Europe/Berlin] Error in get_course_code.php: Database configuration file not found

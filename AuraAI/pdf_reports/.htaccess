@@ -1,0 +1,5 @@
+Options +Indexes
+AddType application/pdf .pdf
+<FilesMatch "\.pdf$">
+    Header set Content-Disposition "attachment"
+</FilesMatch> 
